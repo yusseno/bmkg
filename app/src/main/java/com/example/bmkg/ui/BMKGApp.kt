@@ -55,12 +55,12 @@ fun BmkgApp() {
             modifier = Modifier.fillMaxSize(),
             color = Color.Green.copy(0.1F) // Warna latar belakang dengan transparansi
         ) {
-            val restaurantViewModel: BmkgViewModel =
+            val bmkgViewModel: BmkgViewModel =
                 viewModel(factory = BmkgViewModel.Factory)
             // Menampilkan layar utama
             HomeScreen(
-                bmkgUiState = restaurantViewModel.bmkgUiState, // State UI
-                retryAction = restaurantViewModel::getBmkg, // Aksi untuk mencoba memuat ulang data
+                bmkgUiState = bmkgViewModel.bmkgUiState, // State UI
+                retryAction = bmkgViewModel::getBmkg, // Aksi untuk mencoba memuat ulang data
                 modifier = Modifier.fillMaxSize(), // Modifier untuk menyesuaikan tata letak
                 contentPadding = it // Padding untuk konten dalam layar
             )
